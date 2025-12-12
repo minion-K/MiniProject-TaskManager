@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>project_detail.html</title>
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/project/project_detail.css">
+</head>
+<body>
+  <header class="header">
+      <div class="back-btn">
+        <a href="../index.html">← 뒤로가기</a>
+      </div>
+
+    <button class="header-button">
+      <a href="../sign/signin.html">로그인</a>
+    </button>
+    <button class="header-button">
+      <a href="../sign/signup.html">회원가입</a>
+    </button>
+  </header>
+
+  <div class="container">
+    <aside class="side-nav">
+      <div class="side-wrap">
+        <div class="home-wrap">
+          <img src="../../img/icons8-집-50.png" alt="홈 아이콘">
+          <a href="../index.html">HOME</a>
+        </div>
+
+        <div class="search-wrap">
+          <img class="search-img" src="../../img/icons8-수색-50.png" alt="검색이미지">
+          <p>Search</p>
+          <input class="search-bar" type="search" placeholder="프로젝트명을 입력해주세요.">
+        </div>
+    
+        <ul class="side-project-list">
+          <li class="side-project project-wrap">
+            <img src="../../img/icons8-중간-아이콘-24.png" alt="프로젝트아이콘">
+            <p>Project</p>
+          </li>
+          <!-- 동적 렌더링 -->
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+        </ul>
+      </div>
+      
+      <button type="button">
+        <img class="setting-icon" src="../../img/icons8-설정-50.png" alt="설정 아이콘" title="다크모드">
+      </button>
+    </aside>
+
+  <div class="main-container">
+    <div class="detail-container">
+      <div class="detail-section info-box">
+        <h2 class="section-title">📌 프로젝트 정보</h2>
+        <p><strong>제목:</strong> 프로젝트 1</p>
+        <p><strong>내용:</strong> 프로젝트 1 내용 예시.</p>
+        <p><strong>작성자:</strong> 박현우</p>
+        <p><strong>작성일:</strong> 2025-10-08</p>
+      </div>
+
+      <div class="detail-section notice-box">
+        <h2 class="section-title">📢 공지사항</h2>
+        <a href="../notification.html" class="notice-btn">+</a>
+        <p>다음 회의는 10월 12일(일) 오후 3시에 진행됩니다.</p>
+      </div>
+
+      <div class="detail-section task-box">
+        <h2 class="section-title">✅ 할 일 목록</h2>
+        <a href="../task/task-manager.html" class="task-btn">+</a>
+        <div class="task-list">
+          <div class="task-card">
+            <div class="task-header">
+              <h3 class="task-title">프론트엔드 UI</h3>
+              <span class="priority high">높음</span>
+            </div>
+            <div class="task-body">
+              <p><strong>작성자:</strong> 박현우</p>
+              <p><strong>진행상황:</strong> 진행 중</p>
+              <p><strong>태그:</strong> #frontend #UI</p>
+            </div>
+          </div>
+
+          <div class="task-card">
+            <div class="task-header">
+              <h3 class="task-title">로그인 기능 구현</h3>
+              <span class="priority medium">보통</span>
+            </div>
+            <div class="task-body">
+              <p><strong>작성자:</strong> 권민현</p>
+              <p><strong>진행상황:</strong> 대기 중</p>
+              <p><strong>태그:</strong> #backend #auth</p>
+            </div>
+          </div>
+
+          <div class="task-card">
+            <div class="task-header">
+              <h3 class="task-title">백엔드 DB 연동</h3>
+              <span class="priority low">낮음</span>
+            </div>
+            <div class="task-body">
+              <p><strong>작성자:</strong> 이상은</p>
+              <p><strong>진행상황:</strong> 완료</p>
+              <p><strong>태그:</strong> #database #spring</p>
+            </div>
+          </div>
+
+          <div class="task-card">
+            <div class="task-header">
+              <h3 class="task-title">백엔드 DB 연동</h3>
+              <span class="priority low">낮음</span>
+            </div>
+            <div class="task-body">
+              <p><strong>작성자:</strong> 이상은</p>
+              <p><strong>진행상황:</strong> 완료</p>
+              <p><strong>태그:</strong> #database #spring</p>
+            </div>
+          </div>
+
+          <div class="task-card">
+            <div class="task-header">
+              <h3 class="task-title">백엔드 DB 연동</h3>
+              <span class="priority low">낮음</span>
+            </div>
+            <div class="task-body">
+              <p><strong>작성자:</strong> 이상은</p>
+              <p><strong>진행상황:</strong> 완료</p>
+              <p><strong>태그:</strong> #database #spring</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

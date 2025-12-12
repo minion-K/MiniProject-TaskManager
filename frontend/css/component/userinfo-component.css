@@ -1,0 +1,54 @@
+.container {
+  width: 300px;
+  height: 240px;
+  background-color: var(--bg);
+  border-radius: var(--radius);
+  padding: 10px;
+  position: relative;
+  overflow-y: auto;
+}
+.nickname {
+  margin-left: 3px;
+}
+.auth-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--side);
+  cursor: pointer;
+}
+.auth-items:hover {
+  transform: translateY(-2px);
+  color: var(--accent);
+}
+.user-container {
+  display: flex;
+  width: 270px;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+}
+.info-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.info-container {
+  display: flex;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+select {
+  border: 1px solid var(--sub);
+  border-radius: var(--radius);
+  padding-left: 5px;
+}
+select:focus {
+  border: 1px solid var(--focus);
+}
+#manager,
+#admin {
+  display: none;
+}

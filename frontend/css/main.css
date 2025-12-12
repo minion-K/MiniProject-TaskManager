@@ -1,0 +1,40 @@
+:root {
+  --bg: #FDF6F0;
+  --header: #FFF8F0;
+  --side: #CBBBAA;
+  --main: #DDA572;
+  --sub: #A3B18A;
+  --accent: #4B382A;
+  --primary: #C08A44;
+  --text: #6B5E56;
+
+  --form: #F7EAE4;
+  --form-width: 600px;
+
+  --radius: 16px;
+  --shadow: 0 10px 25px rgba(0,0,0,0.3);
+  --focus: rgb(238, 164, 138);
+}
+
+@font-face {
+    font-family: 'NexonMaplestory';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFLight.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'NexonMaplestory';
+  color: var(--text);
+  user-select: none;
+}
+
+body {
+  height: 100%;
+}
+

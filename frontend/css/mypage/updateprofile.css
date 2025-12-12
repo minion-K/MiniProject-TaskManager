@@ -1,0 +1,126 @@
+.modal-container {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 50px);
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: var(--form);
+  width: var(--form-width);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+  gap: 15px;
+}
+
+.input-box {
+  width: 70%;
+  height: 45px;
+  border: 1px solid var(--sub);
+  border-radius: var(--radius);
+  padding-left: 20px;
+}
+.input-box:disabled {
+  caret-color: transparent;
+}
+.input-box:focus {
+  outline: none;
+  border: 2px solid var(--focus);
+}
+.email-box:focus {
+  outline: none;
+  border: 2px solid var(--focus);
+}
+.email-wrap {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  border:none;
+}
+.email-box {
+  width: 70%;
+  height: 45px;
+  border: 1px solid var(--sub);
+  border-radius: var(--radius);
+  padding-left: 20px;
+}
+
+.gender-box{
+  width: 70%;
+  height: 45px;
+  display: flex;
+}
+
+.gender-wrap{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+}
+
+.radio {
+  display: none;
+}
+
+.custom-box {
+  border: 1px solid var(--sub);
+  background-color: white;
+  width: 100px;
+  height: 45px;
+  display: inline-block;
+  border-radius: var(--radius);
+  font-size: 14px;
+  color: gray;
+  text-align: center;
+  line-height: 45px
+}
+
+
+.male {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+.female{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.radio:checked + .custom-box {
+  background-color: var(--side);
+  color: var(--accent);
+}
+
+.verify-btn {
+  color: var(--accent);
+  text-align: center;
+  padding: 0 20px;
+  background-color: var(--side);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.verify-btn:hover {
+  background-color: var(--accent);
+  color: var(--header);
+}
+.update-btn {
+  width: 70%;
+  height: 45px;
+  border-radius: var(--radius);
+  background-color: var(--side);
+  cursor: pointer;
+}
+.update-btn:hover {
+  background-color: var(--accent);
+  color: var(--header);
+}

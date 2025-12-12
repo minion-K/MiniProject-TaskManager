@@ -1,0 +1,83 @@
+.mypage-wrap {
+  background-color: var(--form);
+  width: 100%;
+  padding: 30px;
+  margin-top: 30px;
+  min-width: 600px;
+  border-radius: var(--radius);
+}
+.mypage-text  {
+  margin: 40px;
+}
+.mypage-container {
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+}
+.profile-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.my-profile {
+  margin:0 10px 30px;
+}
+
+.update-button {
+  width: 80px;
+  height: 35px;
+  background-color: var(--side);
+  border-radius: var(--radius);
+  color: var(--accent);
+  position: relative;
+  top: 0;
+  cursor: pointer;
+}
+
+.update-button:hover {
+  background-color: var(--accent);
+  color: var(--header);
+}
+
+.mypage-items {
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.info-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.task-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.task-wrap {
+  background-color: var(--form);
+  width: 100%;
+  padding: 30px;
+  margin-top: 30px;
+  min-width: 400px;
+  border-radius: var(--radius);
+}
+
+.task-text {
+  margin: 0 10px 30px;
+}
+
+.task-header {
+  display: flex;
+  gap: 15px;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.task-data {
+  display: flex;
+  gap: 15px;
+  justify-content: space-around;
+}

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>task-manager</title>
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/task/task-manager.css">
+  <link rel="stylesheet" href="../../css/task/new-task.css">
+</head>
+
+<body>
+  <header class="header">
+    <button class="header-button">
+      <a href="#">로그인</a>
+    </button>
+    <button class="header-button">
+      <a href="#">회원가입</a>
+    </button>
+  </header>
+
+  <div class="container">
+    <aside class="side-nav">
+      <div class="side-wrap">
+        <div class="home-wrap">
+          <img src="../../img/icons8-집-50.png" alt="홈 아이콘">
+          <a href="#">HOME</a>
+        </div>
+
+        <div class="search-wrap">
+          <img class="search-img" src="../../img/icons8-수색-50.png" alt="검색이미지">
+          <p>Search</p>
+          <input class="search-bar" type="search" placeholder="프로젝트명을 입력해주세요.">
+        </div>
+
+        <ul class="side-project-list">
+          <li class="side-project project-wrap">
+            <img src="../../img/icons8-중간-아이콘-24.png" alt="프로젝트아이콘">
+            <p>Project</p>
+          </li>
+          <!-- 동적 렌더링 -->
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+        </ul>
+      </div>
+
+      <button type="button">
+        <img class="setting-icon" src="../../img/icons8-설정-50.png" alt="설정 아이콘" title="다크모드">
+      </button>
+
+    </aside>
+
+    <input type="checkbox" id="togglePanel" hidden>
+    <input type="checkbox" id="resizeToggle" hidden>
+
+    <div class="main">
+      <div class="main-header">
+        <h1>Project Title</h1>
+        <label for="modelToggle" class="new-task-btn">생성 +</label>
+      </div>
+
+      <div class="task-list">
+
+        <div class="task-row header">
+          <div class="cell">Task Title</div>
+          <div class="cell">assignees</div>
+          <div class="cell">Priority</div>
+          <div class="cell">Status</div>
+          <div class="cell">tags</div>
+        </div>
+        <div class="task-row">
+          <label for="togglePanel" class="cell">Task Title1</label>
+          <div class="cell">assignees1</div>
+          <div class="cell">LOW</div>
+          <div class="cell">Todo</div>
+          <div class="cell">tagIds</div>
+        </div>
+        <div class="task-row">
+          <label for="togglePanel" class="cell">Task Title2</label>
+          <div class="cell">assignees3</div>
+          <div class="cell">MEDIUM</div>
+          <div class="cell">DONE</div>
+          <div class="cell">tagIds</div>
+        </div>
+      </div>
+
+    </div>
+
+    <input type="checkbox" id="modelToggle" hidden>
+    <label for="modelToggle" class="model-overlay"></label>
+
+    <div class="model">
+      <h2>new-task</h2>
+      <form>
+        <label>테스크 명:</label>
+        <input type="text">
+        <label for="assignee">담당자:</label>
+        <input type="text" id="assignee">
+        <div class="tags ">
+          <div>
+            <label>Tag: </label>
+          </div>
+          <div class="tag-add">
+            <div class="selectedTagsWrapper">
+              <div class="selectedTags">
+                <div class="selected-tag">
+                  <span style="color: [color값];">태그명</span>
+                </div>
+              </div>
+            </div>
+            <div class="tagToggleWrapper">
+              <button class="tagToggle">+</button>
+              <div class="tag-modal">
+                <div class="modal-new">
+                  <div class="modal-top">
+                    <input class="tag-top-input" type="text" placeholder="new 태그">
+                    <input class="tag-top-input" type="text" placeholder="new 색상">
+                  </div>
+                  <div class="modal-footer">
+                    <button class="tag-btn">생성</button>
+                    <button class="tag-btn">제거</button>
+                  </div>
+                </div>
+                <hr />
+                <div class="tag-itemsWrapper">
+                  <input class="tag-item-input" type="checkbox" id="tag1">
+                  <label for="tag1">
+                    <span style="color: color값;"></span>태그명값
+                  </label>
+                  <input class="tag-item-input" type="checkbox" id="tag2">
+                  <label for="tag2">
+                    <span style="color: color값;"></span>태그명값
+                  </label>
+                  <input class="tag-item-input" type="checkbox" id="tag3">
+                  <label for="tag3">
+                    <span style="color: color값;"></span>태그명값
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <label>진행 상태:</label>
+        <select>
+          <option>선택하세요</option>
+          <option>진행중</option>
+          <option>완료</option>
+          <option>시작</option>
+        </select>
+        <label>중요도:</label>
+        <select>
+          <option>선택하세요</option>
+          <option>낮음</option>
+          <option>중간</option>
+          <option>높음</option>
+        </select>
+        <label>마감기간:</label>
+        <input type="date">
+
+        <label>직무 내용:</label>
+        <textarea name="message" id="message" rows="4"></textarea>
+
+      </form>
+      <button for="modelToggle" class="create-btn">create</button>
+      <label for="modelToggle" class="close-btn">close</label>
+    </div>
+
+
+    <div class="task-panel">
+      <div class="panel-header">
+        <label class="resize-btn" for="resizeToggle">확대/축소</label>
+        <span class="title">Task Title 상세</span>
+        <label for="togglePanel" class="close-btn">닫기 ✖</label>
+      </div>
+
+      <div class="panel-body">
+        <div class="form-group">
+          <label>진행 상태:</label>
+          <select>
+            <option>선택하세요</option>
+            <option>진행중</option>
+            <option>완료</option>
+            <option>시작</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="createdUser">작성자:</label>
+          <input type="text" id="createdUser" placeholder="작성자 이름">
+        </div>
+
+        <div class="form-group">
+          <label for="assignee">담당자:</label>
+          <input type="text" id="assignee" placeholder="담당자 추가">
+          <button class="new-assignee-btn">+</button>
+        </div>
+
+        <div class="form-group">
+          <label>마감기간:</label>
+          <input type="date">
+        </div>
+
+        <!-- 중요도 -->
+        <div class="form-group">
+          <label>중요도:</label>
+          <select>
+            <option>선택하세요</option>
+            <option>낮음</option>
+            <option>중간</option>
+            <option>높음</option>
+          </select>
+        </div>
+
+        <!-- 태그 -->
+        <div class="form-group tag-add">
+          <label>태그:</label>
+          <div class="selectedTagsWrapper">
+            <div class="selectedTags">
+              <div class="selected-tag">
+                <span style="color: [color값];">태그명</span>
+              </div>
+            </div>
+          </div>
+          <div class="tagToggleWrapper">
+            <button class="tagToggle">+</button>
+            <div class="tag-modal">
+              <div class="modal-new">
+                <div class="modal-top">
+                  <input class="tag-top-input" type="text" placeholder="new 태그">
+                  <input class="tag-top-input" type="text" placeholder="new 색상">
+                </div>
+                <div class="modal-footer">
+                  <button class="tag-btn">생성</button>
+                  <button class="tag-btn">제거</button>
+                </div>
+              </div>
+              <hr />
+              <div class="tag-itemsWrapper">
+                <input class="tag-item-input" type="checkbox" id="tag1">
+                <label for="tag1">
+                  <span style="color: color값;"></span>태그명값
+                </label>
+                <input class="tag-item-input" type="checkbox" id="tag2">
+                <label for="tag2">
+                  <span style="color: color값;"></span>태그명값
+                </label>
+                <input class="tag-item-input" type="checkbox" id="tag3">
+                <label for="tag3">
+                  <span style="color: color값;"></span>태그명값
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 직무내용 -->
+        <div>
+          <article>
+            <div class="form-group top-align">
+              <label for="message">직무 내용:</label>
+              <textarea name="message" id="message" rows="4"></textarea>
+            </div>
+          </article>
+        </div>
+
+        <!-- 코멘트 -->
+        <div class="form-group">
+          <label for="comment">코멘드:</label>
+          <input type="text" placeholder="코멘트 내용을 입력해주세요">
+          <button class="comment-btn">+</button>
+        </div>
+        <div class="comment">
+          <div class="comment-field item1">
+            <div>작성자값</div>
+          </div>
+          <div class="comment-field item2">
+            <div>내용값</div>
+          </div>
+          <div class="comment-field item3">
+            <div>날짜값</div>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="comment-field item1">
+            <div>작성자값</div>
+          </div>
+          <div class="comment-field item2">
+            <div>내용값</div>
+          </div>
+          <div class="comment-field item3">
+            <div>날짜값</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </
+</body>
+
+</html>

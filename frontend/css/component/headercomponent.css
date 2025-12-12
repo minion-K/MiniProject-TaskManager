@@ -1,0 +1,14 @@
+.header {
+  height: 50px;
+  background-color: var(--header);
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.profile-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}

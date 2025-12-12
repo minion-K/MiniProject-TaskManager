@@ -1,0 +1,108 @@
+body {
+  background-color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 페이지 폼 */
+.tag-container {
+  width: var(--form-width);
+  background-color: var(--form);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin: 55px auto;
+  padding: 50px;
+  gap: 10px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* 태그 생성 */
+.input-box {
+  width: 190px;
+  height: 45px;
+  padding-left: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--sub);
+}
+
+.input-box:focus,
+.input-box:hover {
+  outline: none;
+  border: 2px solid var(--focus);
+}
+
+
+/* 태그 목록 */
+.tags-middle {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  text-align: left;
+  background-color: white;
+  align-items: flex-start;
+  border: 1px solid var(--form);
+  border-radius: var(--radius);
+  padding: 15px;
+  width: 400px;
+  min-height: 100px;
+  max-height: 200px;
+  margin-bottom: 10px;
+  gap: 15px;
+}
+
+.tags-inner {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tag-select {
+  border: 1px solid var(--sub);
+  border-radius: var(--radius);
+  accent-color: var(--side);
+
+}
+
+.tag-select:hover {
+  background-color: white;
+  border: 2px solid var(--focus)
+}
+
+.tag-footer {
+  display: flex;
+  justify-content: right;
+  width: 400px;
+}
+
+/* 버튼 관련 */
+.tag-create-btn,
+.tag-ok-btn {
+  margin-left:350px;
+  width: 50px;
+  height: 30px;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--side);
+}
+
+.tag-create-btn {
+  margin-bottom: 20px;
+}
+
+.tag-ok-btn {
+  margin-left: 10px;
+}
+
+.tag-create-btn:focus,
+.tag-create-btn:hover,
+.tag-ok-btn:hover {
+  background-color: var(--accent);
+  color: var(--header);
+}

@@ -1,0 +1,276 @@
+
+
+.panel-header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  border-bottom: 1px solid #eee;
+  background: #fafafa;
+}
+
+.panel-body { 
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  height: 100%;
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+.main-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.task-row label.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* task Title 상세 내용 폼 */
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 400px;
+  gap: 40px;
+}
+.form-group .top-align {
+  align-items: flex-start;
+}
+
+.form-group label {
+  width: 100px;
+  text-align: right;
+  font-weight: 600;
+}
+
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 14px;
+}
+
+.new-assignee-btn  {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  background-color: var(--side);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.new-assignee-btn:hover {
+  background: var(--accent);
+  color: var(--header);
+}
+
+/* ==태그 모음 == */
+.tag-add {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.selectedTagsWrapper {
+  background-color: #fff;
+  flex: 1;
+  height: 80px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 6px;
+  border-radius: var(--radius);
+  position: relative;
+}
+
+.selectedTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+}
+
+.selected-tag {
+  background-color: var(--side);
+  color: var(--header);
+  padding: 4px 10px;
+  border: 1px solid var(--sub);
+  border-radius: var(--radius);
+  font-size: 16px;
+  flex: 0 0 calc(50% -3px);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.tagToggleWrapper {
+  display: flex;
+
+}
+
+.tagToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: var(--side);
+  text-align: right;
+}
+
+.tagToggle:hover {
+  background-color: var(--accent);
+  color: var(--header);
+}
+
+.tag-modal {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  top: 54%;
+  left: 52%;
+  background: #fff;
+  border-end-end-radius: 1px solid #ccc;
+  border-radius: var(--radius);
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+.tagToggleWrapper:hover .tag-modal {
+  display: block;
+}
+
+.modal-new {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.modal-top {
+  display: flex;
+  gap: 10px;
+}
+
+.tag-top-input {
+  width: 130px;
+  height: 30px;
+  padding: 10px;
+  border: 2px solid var(--sub);
+  border-radius: var(--radius);
+  margin-bottom: 15px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.tag-btn {
+  font-size: 16px;
+  width: 40px;
+  height: 25px;
+  background-color: var(--side);
+  border-radius: var(--radius);
+  margin-bottom: 15px;
+}
+
+.tag-btn:hover {
+  background-color: var(--accent);
+  color: var(--header);
+}
+
+.tag-itemsWrapper {
+  width: 270px;
+  height: 70px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 6px;
+  border-radius: var(--radius);
+}
+
+.tag-item-input {
+  margin-right: 10px;
+}
+
+.tag-item-input[type="checkbox"] {
+  margin-right: 1px;
+  accent-color: var(--side);
+}
+
+.tag-item-input[type="text"] {
+  width: 130px;
+  padding: 5px;
+  font-size: 13px;
+}
+
+.form-group.top-align {
+  align-items: flex-start;
+}
+
+
+/* 코멘트 모음 */
+
+.comment-btn  {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  background-color: var(--side);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.comment-btn:hover {
+  background: var(--accent);
+  color: var(--header);
+}
+
+.comment {
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+}
+
+.comment .item1 {
+  flex: 1;
+}
+.comment .item2 {
+  flex: 2;
+}
+.comment .item3 {
+  flex: 1;
+  text-align: right;
+}
+
+
+/* 포커즈 & 호버*/
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+.tag-top-input:focus,
+.tag-top-input:hover,
+.selected-tag:hover {
+  outline: none;
+  border: 2px solid rgb(238, 164, 138);
+}

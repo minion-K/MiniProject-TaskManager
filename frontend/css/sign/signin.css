@@ -1,0 +1,52 @@
+body {
+  background-color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: var(--form-width);
+  background-color: var(--form);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin: 55px auto;
+  padding: 50px;
+  gap: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.input-box {
+  width: 70%;
+  height: 45px;
+  padding-left: 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--sub);
+}
+.input-box:focus {
+  outline: none;
+  border: 2px solid var(--focus);
+}
+.sign-in-btn {
+  width: 70%;
+  height: 45px;
+  padding: 10px 0;
+  border: none;
+  background-color: var(--side);
+  color: var(--accent);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.sign-in-btn:hover {
+  background-color: var(--accent);
+  color: var(--header);
+}
+.find-wrap {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+.find-item:hover {
+  color: var(--accent);
+}

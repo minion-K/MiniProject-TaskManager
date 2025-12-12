@@ -1,0 +1,238 @@
+/* 태그 */
+.tags {
+  display: flex;
+  gap: 10px;
+  align-items: top;
+  padding: 5px 3px;
+}
+
+.tag-message {
+  font-size: 18px;
+}
+
+.tag-add {
+  display: flex;
+}
+
+
+/* 태그 생성 */
+.selectedTagsWrapper {
+  background-color: #fff;
+  width: 200px;
+  height: 70px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 6px;
+  border-radius: var(--radius);
+}
+
+.selectedTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+}
+
+.selected-tag {
+  background-color: var(--side);
+  color: var(--header);
+  padding: 4px 10px;
+  border: 1px solid var(--sub);
+  border-radius: var(--radius);
+  font-size: 18px;
+  flex: 0 0 calc(50% -3px);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.selected-tag:hover {
+  border: 2px solid rgb(238, 164, 138);
+}
+
+.tagToggleWrapper {
+  display: flex;
+  padding-left: 20px;
+
+}
+
+.tagToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: var(--side);
+  text-align: right;
+}
+
+.tagToggle:hover {
+  background-color: var(--accent);
+  color: var(--header);
+}
+
+.tag-modal {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  top: 100px;
+  left: 100px;
+  background: #fff;
+  border-end-end-radius: 1px solid #ccc;
+  border-radius: var(--radius);
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+.tagToggleWrapper:hover .tag-modal {
+  display: block;
+}
+
+.modal-new {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.modal-top {
+  display: flex;
+  gap: 10px;
+}
+
+.tag-top-input {
+  width: 130px;
+  height: 30px;
+  padding: 10px;
+  border: 2px solid var(--sub);
+  border-radius: var(--radius);
+  margin-bottom: 15px;
+}
+
+.tag-top-input:focus,
+.tag-top-input:hover {
+  outline: none;
+  border: 2px solid rgb(238, 164, 138);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.tag-btn {
+  font-size: 16px;
+  width: 40px;
+  height: 25px;
+  background-color: var(--side);
+  border-radius: var(--radius);
+  margin-bottom: 15px;
+}
+
+.tag-btn:hover {
+  background-color: var(--accent);
+  color: var(--header);
+}
+
+/* 태그 목록 */
+.tag-itemsWrapper {
+  width: 270px;
+  height: 70px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 6px;
+  border-radius: var(--radius);
+}
+
+.tag-item-input {
+  margin-right: 10px;
+}
+
+.tag-item-input[type="checkbox"] {
+  margin-right: 1px;
+  accent-color: var(--side);
+}
+
+.tag-item-input[type="text"] {
+  width: 130px;
+  padding: 5px;
+  font-size: 13px;
+}
+
+
+
+
+
+/* 코멘트 작성 */
+
+.comment {
+  width: 50px;
+}
+
+
+/* .comment-text {
+  width: var(--form-width);
+  height: 40px;
+  font-size: 18px;
+  border: 1px solid var(--sub);
+  border-radius: var(--radius);
+  padding-left: 20px;
+}
+
+.comment-text:focus,
+.comment-text:hover {
+  outline: none;
+  border: 2px solid rgb(238, 164, 138);
+}
+
+.comment-btn {
+  align-items: center;
+  width: 50px;
+  height: 40px;
+  font-size: 20px;
+  background-color: var(--side);
+  border-radius: var(--radius);
+  white-space: nowrap;
+}
+
+.comment-btn:hover {
+  background-color: var(--accent);
+  color: var(--header);
+} */
+
+
+/* 출력 코멘트 */
+.comments-out {
+  display: flex;
+  margin: 30px 0 30px;
+  width: var(--form-width);
+  padding: 0 10px;
+  justify-content: space-between;
+}
+
+.comment-field {
+  min-width: 20px;
+}
+
+.inner2 {
+  flex: 1;
+}
+
+/* .inner2 .item1 {
+  flex: 1;
+  text-align: center;
+}
+.inner2 .item2 {
+  flex: 3;
+  text-align: center;
+}
+
+.inner2 .item3 {
+  flex: 1;
+  text-align: center; 
+}
+  */

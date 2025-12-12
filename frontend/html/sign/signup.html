@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign-Up</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/sign/signup.css">
+</head>
+<body>
+  <form class="container">
+    <h1 class="sign-up">회원 가입</h1>
+    <p><span>*</span>는 필수 입력값입니다.</p>
+
+    <input class="input-box" type="text" placeholder="* 이름">
+    <div class="id-wrap">
+      <input class="input-box" type="text" placeholder="* 아이디">
+      <button type="submit" class="id-btn">중복확인</button>
+    </div>
+    <input class="input-box" type="text" placeholder="* 비밀번호">
+    <input class="input-box" type="text" placeholder="* 비밀번호 확인">
+    <input class="input-box" type="email" placeholder="* 이메일">
+    <input class="input-box" type="text" placeholder="* 닉네임">
+    <div class="gender-box">
+      <label class="gender-wrap">
+        <input class="radio" type="radio" name="gender" id="male" required> 
+        <div class="custom-box male">남자</div>
+      </label>
+      <label class="gender-wrap">
+        <input class="radio" type="radio" name="gender" id="female" placeholder="여자" required>
+        <div class="custom-box female">여자</div>
+      </label>
+    </div>
+    <button type="submit" class="sign-up-btn">회원 가입</button>
+  </form>
+</body>
+</html>

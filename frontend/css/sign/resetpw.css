@@ -1,0 +1,45 @@
+body {
+  background-color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: var(--form);
+  width: var(--form-width);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 50px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.input-box {
+  width: 70%;
+  height: 45px;
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--sub);
+}
+
+.input-box:focus {
+  outline: none;
+  border: 2px solid var(--focus);
+}
+
+.verify-btn {
+  width: 70%;
+  height: 45px;
+  background-color: var(--side);
+  border-radius: var(--radius);
+  color: var(--accent);
+  border: none;
+}
+.verify-btn:hover {
+  color: var(--header);
+  background-color: var(--accent);
+}

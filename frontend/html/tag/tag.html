@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tag.html</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/tag/tag.css">
+</head>
+
+<body>
+  <form class="tag-container">
+    <!-- 태그 생성 -->
+    <h1>태그</h1>
+    <div class="tag-top">
+      <input type="text" class="input-box" name="name" id="name" placeholder="태그명">
+      <input type="text" class="input-box" name="color" id="color" placeholder="태그색상">
+      <button type="submit" class="tag-create-btn">생성</button>
+    </div>
+
+
+    <!-- 태그 조회 -->
+    <h1>태그 목록</h1>
+    <div class="tags-middle">
+      <div class="tags-inner">
+        <input class="tag-select" type="checkbox" id="tag1">
+        <label for="tag1">
+          <span style="color: color값;">태그명값</span>
+        </label>
+      </div>
+      <div class="tags-inner">
+        <input class="tag-select" type="checkbox" id="tag2">
+        <label for="tag2">
+          <span style="color: color값;">태그명값</span>
+        </label>
+      </div>
+    </div>
+    <div class="tag-footer">
+      <button class="tag-ok-btn">확인</button>
+      <button class="tag-ok-btn">제거</button>
+    </div>
+
+  </form>
+</body>
+
+</html>

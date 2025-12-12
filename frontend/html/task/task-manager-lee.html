@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>task-lee</title>
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/task/task-manager-lee.css">
+  <link rel="stylesheet" href="../../css/task/new-task.css">
+</head>
+
+<body>
+  <div class="task-panel">
+    <div class="panel-header">
+      <label class="resize-btn" for="resizeToggle">확대/축소</label>
+      <span class="title">Task Title 상세</span>
+      <label for="togglePanel" class="close-btn">닫기 ✖</label>
+    </div>
+
+    <div class="panel-body">
+      <div class="form-group">
+        <label>진행 상태:</label>
+        <select>
+          <option>선택하세요</option>
+          <option>진행중</option>
+          <option>완료</option>
+          <option>시작</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="createdUser">작성자:</label>
+        <input type="text" id="createdUser" placeholder="작성자 이름">
+      </div>
+
+      <!-- 담당자 -->
+      <div class="form-group">
+        <label for="assignee">담당자:</label>
+        <input type="text" id="assignee" placeholder="담당자 추가">
+        <button class="new-assignee-btn">+</button>
+      </div>
+
+      <div class="form-group">
+        <label>마감기간:</label>
+        <input type="date">
+      </div>
+
+      <!-- 중요도 -->
+      <div class="form-group">
+        <label>중요도:</label>
+        <select>
+          <option>선택하세요</option>
+          <option>낮음</option>
+          <option>중간</option>
+          <option>높음</option>
+        </select>
+      </div>
+
+      <!-- 태그 -->
+      <div class="form-group tag-add">
+        <label>태그:</label>
+        <div class="selectedTagsWrapper">
+          <div class="selectedTags">
+            <div class="selected-tag">
+              <span style="color: [color값];">태그명</span>
+            </div>
+          </div>
+        </div>
+        <div class="tagToggleWrapper">
+          <button class="tagToggle">+</button>
+          <div class="tag-modal">
+            <div class="modal-new">
+              <div class="modal-top">
+                <input class="tag-top-input" type="text" placeholder="new 태그">
+                <input class="tag-top-input" type="text" placeholder="new 색상">
+              </div>
+              <div class="modal-footer">
+                <button class="tag-btn">생성</button>
+                <button class="tag-btn">제거</button>
+              </div>
+            </div>
+            <hr />
+            <div class="tag-itemsWrapper">
+              <input class="tag-item-input" type="checkbox" id="tag1">
+              <label for="tag1">
+                <span style="color: color값;"></span>태그명값
+              </label>
+              <input class="tag-item-input" type="checkbox" id="tag2">
+              <label for="tag2">
+                <span style="color: color값;"></span>태그명값
+              </label>
+              <input class="tag-item-input" type="checkbox" id="tag3">
+              <label for="tag3">
+                <span style="color: color값;"></span>태그명값
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 직무내용 -->
+      <div>
+      <article>
+        <div class="form-group top-align">
+          <label for="message">직무 내용:</label>
+            <textarea name="message"  id="message" rows="4"></textarea>
+          </div>
+        </article>
+      </div>
+
+      <!-- 코멘트 -->
+      <div class="form-group">
+        <label for="comment">코멘드:</label>
+        <input type="text" placeholder="코멘트 내용을 입력해주세요">
+        <button class="comment-btn">+</button>
+      </div>
+      <div class="comment">
+        <div class="comment-field item1">
+          <div>작성자값</div>
+        </div>
+        <div class="comment-field item2">
+          <div>내용값</div>
+        </div>
+        <div class="comment-field item3">
+          <div>날짜값</div>
+        </div>
+      </div>
+      <div class="comment">
+        <div class="comment-field item1">
+          <div>작성자값</div>
+        </div>
+        <div class="comment-field item2">
+          <div>내용값</div>
+        </div>
+        <div class="comment-field item3">
+          <div>날짜값</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

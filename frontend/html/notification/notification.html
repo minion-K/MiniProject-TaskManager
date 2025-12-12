@@ -1,0 +1,191 @@
+ <!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>notificationlist</title>
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/notification/notification.css">
+  <link rel="stylesheet" href="../../css/notification/notification_detail.css">
+   <link rel="stylesheet" href="../../css/notification/notification_create.css">
+  <link rel="stylesheet" href="../../css/notification/notification_updated.css">
+</head>
+<body>
+  <header class="header">
+    <button class="header-button">
+      <a href="#">로그인</a>
+    </button>
+    <button class="header-button">
+      <a href="#">회원가입</a>
+    </button>
+  </header>
+
+  <div class="container">
+    <aside class="side-nav">
+      <div class="side-wrap">
+        <div class="home-wrap">
+          <img src="../../img/icons8-집-50.png" alt="홈 아이콘">
+          <a href="#">HOME</a>
+        </div>
+
+        <div class="search-wrap">
+          <img class="search-img" src="../../img/icons8-수색-50.png" alt="검색이미지">
+          <p>Search</p>
+          <input class="search-bar" type="search" placeholder="프로젝트명을 입력해주세요.">
+        </div>
+    
+        <ul class="side-project-list">
+          <li class="side-project project-wrap">
+            <img src="../../img/icons8-중간-아이콘-24.png" alt="프로젝트아이콘">
+            <p>Project</p>
+          </li>
+          <!-- 동적 렌더링 -->
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+        </ul>
+      </div>
+      
+      <button type="button">
+        <img class="setting-icon" src="../../img/icons8-설정-50.png" alt="설정 아이콘" title="다크모드">
+      </button>
+      
+    </aside>
+
+    <div class="main">
+      <h1>Project title</h1>
+      <h2 class="notice-title">Notice</h2>
+
+     <div class="notice-top">
+     <button class="create-btn" onclick="location.href='notification_create.html'">작성</button>
+     </div>
+  
+
+      <div class="notice">  
+    <div class="notice-header">
+      <div class="notice-col">번호</div>
+      <div class="notice-col">제목</div>
+      <div class="notice-col">작성일자</div>
+    </div>
+
+    <div class="notice-row">
+      <div class="notice-col">1</div>
+      <div class="notice-col title">
+        <a href="../../html/notification/notification_detail.html">국비 교육 안내</a>
+      </div>
+      <div class="notice-col">2025-10-02</div>
+    </div>
+
+    <div class="notice-row">
+      <div class="notice-col">2</div>
+      <div class="notice-col title">
+        <a href="../../html/notification/notification_detail.html">제목</a>
+      </div>
+      <div class="notice-col">2025-10-03</div>
+    </div>
+
+    <div class="notice-row">
+      <div class="notice-col">3</div>
+      <div class="notice-col title">
+        <a href="../../html/notification/notification_detail.html">제목</a>
+      </div>
+      <div class="notice-col">2025-10-03</div>
+    </div>
+
+    <div class="notice-row">
+      <div class="notice-col">4</div>
+      <div class="notice-col title">
+        <a href="../../html/notification/notification_detail.html">제목</a>
+      </div>
+      <div class="notice-col">2025-10-03</div>
+    </div>
+
+    <div class="notice-row">
+      <div class="notice-col">5</div>
+      <div class="notice-col title">
+        <a href="../../html/notification/notification_detail.html">제목</a>
+      </div>
+      <div class="notice-col">2025-10-03</div>
+    </div>
+
+    <div class="notice-row">
+      <div class="notice-col">6</div>
+      <div class="notice-col title">
+        <a href="../../html/notification/notification_detail.html">제목</a>
+      </div>
+      <div class="notice-col">2025-10-03</div>
+    </div>
+
+    <div class="notice-row">
+      <div class="notice-col">7</div>
+      <div class="notice-col title">
+        <a href="../../html/notification/notification_detail.html">제목</a>
+      </div>
+      <div class="notice-col">2025-10-03</div>
+    </div>
+    <div class="notice-row">
+      <div class="notice-col">8</div>
+      <div class="notice-col title">
+        <a href="../../html/notification/notification_detail.html">제목</a>
+      </div>
+      <div class="notice-col">2025-10-03</div>
+    </div>
+
+    <div class="notice-row">
+      <div class="notice-col">9</div>
+      <div class="notice-col title">
+        <a href="../../html/notification/notification_detail.html">제목</a>
+      </div>
+      <div class="notice-col">2025-10-03</div>
+    </div>
+
+    <div class="notice-row">
+      <div class="notice-col">10</div>
+      <div class="notice-col title">
+        <a href="../../html/notification/notification_detail.html">제목</a>
+      </div>
+      <div class="notice-col">2025-10-03</div>
+    </div>
+
+    <div class="notice-row">
+      <div class="notice-col">11</div>
+      <div class="notice-col title">
+        <a href="../../html/notification/notification_detail.html">제목</a>
+      </div>
+      <div class="notice-col">2025-10-03</div>
+    </div>
+
+    <div class="notice-row">
+      <div class="notice-col">12</div>
+      <div class="notice-col title">
+        <a href="../../html/notification/notification_detail.html">제목</a>
+      </div>
+      <div class="notice-col">2025-10-03</div>
+    </div>
+
+    <div class="notice-row">
+      <div class="notice-col">13</div>
+      <div class="notice-col title">
+        <a href="../../html/notification/notification_detail.html">제목</a>
+      </div>
+      <div class="notice-col">2025-10-03</div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</body>
+</html>

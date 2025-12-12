@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index</title>
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../html/sign/signin.html">
+      <button class="header-button">로그인</button>
+    </a>
+
+    <a href="../html/sign/signup.html">
+      <button class="header-button">회원가입</button>
+    </a>
+  </header>
+
+  <div class="container">
+    <aside class="side-nav">
+      <div class="side-wrap">
+        <div class="home-wrap">
+          <img src="../img/icons8-집-50.png" alt="홈 아이콘">
+          <a href="../html/index.html">HOME</a>
+        </div>
+
+        <div class="search-wrap">
+          <img class="search-img" src="../img/icons8-수색-50.png" alt="검색이미지">
+          <p>Search</p>
+          <input class="search-bar" type="search" placeholder="프로젝트명을 입력해주세요.">
+        </div>
+    
+        <ul class="side-project-list">
+          <li class="side-project project-wrap">
+            <img src="../img/icons8-중간-아이콘-24.png" alt="프로젝트아이콘">
+            <p>Project</p>
+          </li>
+          <!-- 동적 렌더링 -->
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+        </ul>
+      </div>
+      
+      <button type="button">
+        <img class="setting-icon" src="../img/icons8-설정-50.png" alt="설정 아이콘" title="다크모드">
+      </button>
+      
+    </aside>
+
+    <div class="main">
+      <h1>Task Manager</h1>
+      <h2 style="font-size: 24px;">Project</h2>
+
+    <div class="add-project">
+      <a href="#modal-add" class="open-modal">
+      <button>+</button>
+      <span>Add Project</span>
+      </a>
+    </div>
+
+    <div class="project-list">
+      <div class="project-card">
+        <a href="../html/project/project_detail.html" class="project-link">
+          <div class="project-info">
+            <div class="project-title">프로젝트 1</div>
+            <div class="project-author">작성자: 박현우</div>
+            <div class="project-desc">프로젝트 1 내용 예시.</div>
+          </div>
+        </a>
+        <div class="edit-delete-btn">
+          <a href="#modal-edit" class="edit-btn">수정</a>
+          <a href="#modal-delete" class="delete-btn">삭제</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-info">
+          <div class="project-title">프로젝트 2</div>
+          <div class="project-author">작성자: 이상은</div>
+          <div class="project-desc">프로젝트 2 내용 예시.</div>
+        </div>
+        <div class="edit-delete-btn">
+          <a href="#modal-edit" class="edit-btn">수정</a>
+          <a href="#modal-delete" class="delete-btn">삭제</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-info">
+          <div class="project-title">프로젝트 3</div>
+          <div class="project-author">작성자: 최광섭</div>
+          <div class="project-desc">프로젝트 3 내용 예시.</div>
+        </div>
+        <div class="edit-delete-btn">
+          <a href="#modal-edit" class="edit-btn">수정</a>
+          <a href="#modal-delete" class="delete-btn">삭제</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-info">
+          <div class="project-title">프로젝트 4</div>
+          <div class="project-author">작성자: 최광섭</div>
+          <div class="project-desc">프로젝트 3 내용 예시.</div>
+        </div>
+        <div class="edit-delete-btn">
+          <a href="#modal-edit" class="edit-btn">수정</a>
+          <a href="#modal-delete" class="delete-btn">삭제</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+<div id="modal-add" class="modal">
+  <div class="modal-content">
+    <h2>프로젝트 추가</h2>
+    <input type="text" placeholder="프로젝트 명" class="modal-input">
+    <input type="text" placeholder="작성자" class="modal-input">
+    <textarea placeholder="프로젝트 내용"></textarea>
+    <div class="modal-btns">
+      <a href="#" class="btn">취소</a>
+      <a href="#" class="btn btn-primary">추가</a>
+    </div>
+  </div>
+</div>
+
+<div id="modal-edit" class="modal">
+  <div class="modal-content">
+    <h2>프로젝트 수정</h2>
+    <input type="text" value="수정 시 제목" class="modal-input">
+    <textarea>수정 시 내용</textarea>
+    <div class="modal-btns">
+      <a href="#" class="btn">취소</a>
+      <a href="#" class="btn btn-primary">저장</a>
+    </div>
+  </div>
+</div>
+
+<div id="modal-delete" class="modal">
+  <div class="modal-content">
+    <h2>정말 삭제하시겠습니까?</h2>
+    <div class="modal-btns">
+      <a href="#" class="btn">아니오</a>
+      <a href="#" class="btn btn-danger">예</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

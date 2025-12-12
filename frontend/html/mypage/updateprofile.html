@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update-Profile</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/mypage/mypage.css">
+  <link rel="stylesheet" href="../../css/mypage/updateprofile.css">
+</head>
+<body>
+  <body>
+  <header class="header">
+    <a href="../../html/sign/signin.html">
+      <button class="header-button">로그인</button>
+    </a>
+
+    <a href="../../html/sign/signup.html">
+      <button class="header-button">회원가입</button>
+    </a>
+  </header>
+
+  <div class="container">
+    <aside class="side-nav">
+      <div class="side-wrap">
+        <div class="home-wrap">
+          <img src="../../img/icons8-집-50.png" alt="홈 아이콘">
+          <a href="../../html/index.html">HOME</a>
+        </div>
+
+        <div class="search-wrap">
+          <img class="search-img" src="../../img/icons8-수색-50.png" alt="검색이미지">
+          <p>Search</p>
+          <input class="search-bar" type="search" placeholder="프로젝트명을 입력해주세요.">
+        </div>
+    
+        <ul class="side-project-list">
+          <li class="side-project project-wrap">
+            <img src="../../img/icons8-중간-아이콘-24.png" alt="프로젝트아이콘">
+            <p>Project</p>
+          </li>
+          <!-- 동적 렌더링 -->
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+          <li class="side-project">
+            <a href="#">최근 생성/수정된 프로젝트</a>
+          </li>
+        </ul>
+      </div>
+      
+      <button type="button">
+        <img class="setting-icon" src="../../img/icons8-설정-50.png" alt="설정 아이콘" title="다크모드">
+      </button>
+      
+    </aside>
+
+    <div class="main">
+      <h1>Task Manager</h1>
+      <h2 class="mypage-text">마이 페이지</h2>
+
+      <section class="mypage-wrap">
+        <div class="profile-wrap">
+          <h2 class="my-profile">내 정보</h2>
+          <button class="update-button">수정</button>
+        </div>
+        <div class="mypage-container">
+          <div class="mypage-items mypage-items-left">
+          <!-- 데이터 >> 동적렌더링 -->
+            <div class="info-box">
+              <div class="title">이름</div>
+              <div class="data">이름 값</div>
+            </div>
+            <div class="info-box">
+              <div class="title">아이디</div>
+              <div class="data">아이디값</div>
+            </div>
+            <div class="info-box">
+              <div class="title">이메일</div>
+              <div class="data">이메일 값</div>
+            </div>
+          </div>
+        
+          <div class="mypage-items mypage-items-right">
+            <div class="info-box">
+              <div class="title">닉네임</div>
+              <div class="data">닉네임 값</div>
+            </div>
+            <div class="info-box">
+              <div class="title">성별</div>
+              <div class="data">성별 값</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="task-wrap">
+        <div class="profile-wrap">
+          <h2 class="task-text">내 할일</h2>
+        </div>
+        <div class="task-container">
+          <div class="task-header">
+            <div class="task-field">프로젝트ID</div>
+            <div class="task-field">task</div>
+            <div class="task-field">creatUser</div>
+            <div class="task-field">status</div>
+            <div class="task-field">priority</div>
+            <div class="task-field">duedate</div>
+          </div>
+
+          <div class="task-data">
+            <div class="task-field-data">프로젝트ID</div>
+            <div class="task-field-data">task</div>
+            <div class="task-field-data">creatUser</div>
+            <div class="task-field-data">status</div>
+            <div class="task-field-data">priority</div>
+            <div class="task-field-data">duedate</div>
+          </div>
+
+          <div class="task-data">
+            <div class="task-field-data">프로젝트ID</div>
+            <div class="task-field-data">task</div>
+            <div class="task-field-data">creatUser</div>
+            <div class="task-field-data">status</div>
+            <div class="task-field-data">priority</div>
+            <div class="task-field-data">duedate</div>
+          </div>
+        </div>
+      </section>
+
+      
+    </div>
+
+    <div class="modal-container">
+      <form class="modal">
+        <h1>회원정보 수정</h1>
+        <!-- 이름, 아이디는 동적 렌더링 -->
+        <input class=input-box type="text" id=name disabled placeholder="이름">
+        <input class=input-box type="text" id=login-id disabled placeholder="아이디">
+        <div class="email-wrap input-box">
+          <input class="email-box" type="email" id="email" placeholder="이메일">
+          <button class="verify-btn" type="submit">인증</button>
+        </div>
+        <input class=input-box type="text" id="nickname" placeholder="닉네임">
+        <div class="gender-box">
+          <label class="gender-wrap">
+            <input class="radio" type="radio" name="gender" id="male" required> 
+            <div class="custom-box male">남자</div>
+          </label>
+          <label class="gender-wrap">
+            <input class="radio" type="radio" name="gender" id="female" placeholder="여자" required>
+            <div class="custom-box female">여자</div>
+          </label>
+        </div>
+
+        <button class="update-btn">수정 완료</button>
+      </form>
+    </div>
+  </div>
+  
+</body>
+</body>
+</html>

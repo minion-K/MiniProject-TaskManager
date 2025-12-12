@@ -1,0 +1,51 @@
+body {
+  background-color: var(--bg);
+}
+
+.container {
+  background-color: var(--form);
+  width: var(--form-width);
+  padding: 50px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 50px auto;
+  align-items: center;
+}
+.input-box {
+  width: 70%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: var(--radius);
+  border: 1px solid var(--sub);
+  padding-left: 20px;
+}
+
+.input-box:focus {
+  outline: none;
+  border: 2px solid var(--focus);
+}
+
+
+.verify-btn {
+  width: 70%;
+  height: 45px;
+  background-color: var(--side);
+  color: var(--accent);
+  border: none;
+  border-radius: var(--radius);
+}
+
+.verify-btn:hover {
+  background-color: var(--accent);
+  color: var(--header);
+}
+
+.found-id-wrap {
+  flex-direction: row;
+  justify-content: space-between;
+  /* display: none; */
+}
