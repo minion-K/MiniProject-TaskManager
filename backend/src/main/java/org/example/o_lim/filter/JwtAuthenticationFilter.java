@@ -75,7 +75,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 return ;
             }
 
-            String loginId = jwtProvider.getUsernameFromJwt(token);
+            String loginId = jwtProvider.getLoginIdFromJwt(token);
 
             User user = userRepository.findByLoginId(loginId)
                     .orElseThrow(() -> new UsernameNotFoundException("사용자를 찾을 수 없습니다."));

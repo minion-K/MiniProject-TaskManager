@@ -1,6 +1,7 @@
 package org.example.o_lim.config;
 
 import lombok.RequiredArgsConstructor;
+import org.example.o_lim.common.constants.ApiMappingPattern;
 import org.example.o_lim.filter.JwtAuthenticationFilter;
 import org.example.o_lim.handler.JsonAccessDeniedHandler;
 import org.example.o_lim.handler.JsonAuthenticationEntryPoint;
@@ -100,37 +101,40 @@ public class WebSecurityConfig {
                             .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 
 //                            users/auth
-                            .requestMatchers("/api/v1/auth/**").permitAll()
-                            .requestMatchers("/api/v1/users/me/**").authenticated()
-                            .requestMatchers(HttpMethod.GET, "/api/v1/users/**").permitAll()
+                            .requestMatchers(ApiMappingPattern.Auth.ALL).permitAll()
+                            .requestMatchers(ApiMappingPattern.Users.ME_ALL).authenticated()
+                            .requestMatchers(HttpMethod.GET, ApiMappingPattern.Users.ALL).permitAll()
 
 //                            admin
-                            .requestMatchers("/api/v1/admin/**").authenticated()
+                            .requestMatchers(ApiMappingPattern.Admin.ALL).hasRole("ADMIN")
 
 //                            comments
-                            .requestMatchers(HttpMethod.POST, "/api/v1/tasks/*/comments/**").hasAnyRole("ADMIN", "MANAGER", "USER")
-                            .requestMatchers(HttpMethod.GET, "/api/v1/tasks/*/comments/**").permitAll()
-                            .requestMatchers(HttpMethod.DELETE, "/api/v1/tasks/*/comments/**").authenticated()
+                            .requestMatchers(HttpMethod.POST, ApiMappingPattern.Comments.ALL).hasAnyRole("ADMIN", "MANAGER", "USER")
+                            .requestMatchers(HttpMethod.GET, ApiMappingPattern.Comments.ALL).permitAll()
+                            .requestMatchers(HttpMethod.DELETE, ApiMappingPattern.Comments.ALL).authenticated()
 
 //                            notifications
-                            .requestMatchers("/api/v1/notifications/**").hasRole("ADMIN")
+                            .requestMatchers(HttpMethod.GET, ApiMappingPattern.Notification.ALL).permitAll()
+                            .requestMatchers(HttpMethod.POST, ApiMappingPattern.Notification.ALL).hasRole("ADMIN")
+                            .requestMatchers(HttpMethod.PUT, ApiMappingPattern.Notification.ALL).hasRole("ADMIN")
+                            .requestMatchers(HttpMethod.DELETE, ApiMappingPattern.Notification.ALL).hasRole("ADMIN")
 
 //                            project
-                            .requestMatchers(HttpMethod.POST, "/api/v1/projects/**").hasAnyRole("ADMIN","MANAGER")
-                            .requestMatchers(HttpMethod.GET, "/api/v1/projects/**").permitAll()
-                            .requestMatchers(HttpMethod.PUT, "/api/v1/projects/**").authenticated()
-                            .requestMatchers(HttpMethod.DELETE, "/api/v1/projects/**").hasAnyRole("ADMIN","MANAGER")
+                            .requestMatchers(HttpMethod.POST, ApiMappingPattern.Projects.ALL).hasAnyRole("ADMIN","MANAGER")
+                            .requestMatchers(HttpMethod.GET, ApiMappingPattern.Projects.ALL).permitAll()
+                            .requestMatchers(HttpMethod.PUT, ApiMappingPattern.Projects.ALL).authenticated()
+                            .requestMatchers(HttpMethod.DELETE, ApiMappingPattern.Projects.ALL).hasAnyRole("ADMIN","MANAGER")
 
 //                            tag
-                            .requestMatchers(HttpMethod.POST, "/api/v1/projects/*/tags/**").authenticated()
-                            .requestMatchers(HttpMethod.GET, "/api/v1/projects*/tags/**").permitAll()
-                            .requestMatchers(HttpMethod.DELETE, "/api/v1/projects/*/tags/**").authenticated()
+                            .requestMatchers(HttpMethod.POST, ApiMappingPattern.Tags.ALL).authenticated()
+                            .requestMatchers(HttpMethod.GET, ApiMappingPattern.Tags.ALL).permitAll()
+                            .requestMatchers(HttpMethod.DELETE, ApiMappingPattern.Tags.ALL).authenticated()
 
 //                            task
-                            .requestMatchers(HttpMethod.POST, "/api/v1/projects/*/tasks/**").hasAnyRole("ADMIN", "MANAGER")
-                            .requestMatchers(HttpMethod.GET, "/api/v1/projects/*/tasks/**").permitAll()
-                            .requestMatchers(HttpMethod.PUT, "/api/v1/projects/*/tasks/**").authenticated()
-                            .requestMatchers(HttpMethod.DELETE, "/api/v1/projects/*/tasks/**").hasAnyRole("ADMIN", "MANAGER");
+                            .requestMatchers(HttpMethod.POST, ApiMappingPattern.Tasks.ALL).hasAnyRole("ADMIN", "MANAGER")
+                            .requestMatchers(HttpMethod.GET, ApiMappingPattern.Tasks.ALL).permitAll()
+                            .requestMatchers(HttpMethod.PUT, ApiMappingPattern.Tasks.ALL).authenticated()
+                            .requestMatchers(HttpMethod.DELETE, ApiMappingPattern.Tasks.ALL).hasAnyRole("ADMIN", "MANAGER");
                 });
 
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

@@ -82,7 +82,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ResponseDto<Object>> handleNotFound(EntityNotFoundException e) {
         log.warn("Not Found: {}", e.getMessage());
 
-        return failed(ErrorCode.NOT_FOUND, null, null);
+        return failed(ErrorCode.NOT_FOUND, e.getMessage(), null);
     }
 
     @ExceptionHandler({DataIntegrityViolationException.class})

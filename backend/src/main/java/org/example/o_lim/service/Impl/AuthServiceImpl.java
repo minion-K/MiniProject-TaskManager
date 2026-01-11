@@ -1,6 +1,7 @@
 package org.example.o_lim.service.Impl;
 
 import io.jsonwebtoken.Claims;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.example.o_lim.common.enums.RoleType;
 import org.example.o_lim.dto.ResponseDto;
@@ -106,7 +107,7 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public ResponseDto<FindIdResponseDto> findId(FindIdRequestDto request) {
         User user = userRepository.findByEmail(request.email())
-                .orElseThrow(() -> new IllegalArgumentException("가입된 이메일이 아닙니다."));
+                .orElseThrow(() -> new EntityNotFoundException("가입된 이메일이 아닙니다."));
 
         if(!user.getName().equals(request.name())) {
             throw new IllegalArgumentException("사용자 이름이 일치하지 않습니다.");
@@ -128,7 +129,7 @@ public class AuthServiceImpl implements AuthService {
             throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
 
         User user = userRepository.findByEmail(request.email())
-                .orElseThrow(() -> new IllegalArgumentException("가입된 이메일이 아닙니다."));
+                .orElseThrow(() -> new EntityNotFoundException("가입된 이메일이 아닙니다."));
 
         if(!user.getLoginId().equals(request.loginId()))
             throw new IllegalArgumentException("로그인 ID가 일치하지 않습니다.");

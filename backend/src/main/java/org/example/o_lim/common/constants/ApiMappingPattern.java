@@ -12,6 +12,9 @@ public class ApiMappingPattern {
 
         public static final String MY_INFO = "/me";
         public static final String MINI_MY_INFO = "/me/mini";
+
+        public static final String ME_ALL = ROOT + "/me/**";
+        public static final String ALL = ROOT + "/**";
     }
 
     public static final class Auth {
@@ -25,6 +28,8 @@ public class ApiMappingPattern {
         public static final String VERIFY = "/verify";
         public static final String FIND_ID = "/find-id";
         public static final String RESET_PASSWORD = "/reset-pw";
+
+        public static final String ALL = ROOT + "/**";
     }
 
     public static final class Admin {
@@ -35,6 +40,8 @@ public class ApiMappingPattern {
         public static final String REPLACE = "/roles/replace";
         public static final String ADD = "/roles/add";
         public static final String REMOVE = "/roles/remove";
+
+        public static final String ALL = ROOT + "/**";
     }
 
     public static final class Projects {
@@ -45,6 +52,8 @@ public class ApiMappingPattern {
         public static final String BY_ID = "/{projectId}";
         public static final String SEARCH = "/title";
         public static final String SEARCH_BY_TASK_DESC = "/task-desc";
+
+        public static final String ALL = ROOT + "/**";
     }
 
     public static final class Tasks {
@@ -56,6 +65,9 @@ public class ApiMappingPattern {
         public static final String UPDATE_BY_STATUS = BY_ID + "/status";
         public static final String FILTER_CREATED_USER = "/created-user/{createdUser}";
         public static final String SEARCH = "/search";
+
+        public static final String SECURITY_ROOT = BASE + "/projects/*/tasks";
+        public static final String ALL = SECURITY_ROOT + "/**";
     }
 
     public static final class Tags {
@@ -64,6 +76,9 @@ public class ApiMappingPattern {
         public static final String ROOT = BASE + "/projects/{projectId}/tags";
 
         public static final String BY_ID = "/{tagId}";
+
+        public static final String SECURITY_ROOT = BASE + "/projects/*/tags";
+        public static final String ALL = SECURITY_ROOT + "/**";
     }
 
     public static final class Comments {
@@ -73,6 +88,9 @@ public class ApiMappingPattern {
 
         public static final String BY_ID = "/{commentId}";
         public static final String PAGE = "/page";
+
+        public static final String SECURITY_ROOT = BASE + "/tasks/*/comments";
+        public static final String ALL = SECURITY_ROOT + "/**";
     }
 
     public static final class Notification {
@@ -81,5 +99,8 @@ public class ApiMappingPattern {
         public static final String ROOT = BASE + "/projects/{projectId}/notifications";
 
         public static final String BY_ID = "/{notificationId}";
+
+        public static final String SECURITY_ROOT = BASE + "/projects/*/notifications";
+        public static final String ALL = SECURITY_ROOT + "/**";
     }
 }

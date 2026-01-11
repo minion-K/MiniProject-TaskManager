@@ -15,7 +15,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface TaskService {
-    ResponseDto<TaskCreateResponseDto> createTask(Long id, UserPrincipal principal, @Valid TaskCreateRequestDto request);
+    ResponseDto<TaskCreateResponseDto> createTask(Long projectId, UserPrincipal principal, @Valid TaskCreateRequestDto request);
     ResponseDto<List<TaskSearchResponseDto>> getAllTasks(Long projectId);
     ResponseDto<TaskDetailResponseDto> getTaskById(Long projectId, Long taskId);
     ResponseDto<List<TaskDetailResponseDto>> searchTasks(

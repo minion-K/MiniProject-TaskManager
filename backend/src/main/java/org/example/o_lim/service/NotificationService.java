@@ -13,6 +13,6 @@ public interface NotificationService {
     ResponseDto<NotificationDetailResponseDto> createNotification(UserPrincipal principal, Long projectId, @Valid NotificationCreatedRequestDto request);
     ResponseDto<NotificationDetailResponseDto> updateNotification(UserPrincipal principal, Long notificationId, Long projectId, @Valid NotificationUpdatedRequestDto request);
     ResponseDto<List<NotificationListResponseDto>> getAllNotifications(Long projectId);
-    ResponseDto<NotificationDetailResponseDto> getNotificationById(Long notificationId);
+    ResponseDto<NotificationDetailResponseDto> getNotificationById(Long notificationId, Long projectId);
     ResponseDto<Void> deleteNotification(UserPrincipal principal, Long notificationId, Long projectId);
 }

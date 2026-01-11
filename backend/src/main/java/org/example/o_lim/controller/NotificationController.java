@@ -27,7 +27,7 @@ public class NotificationController {
           @AuthenticationPrincipal UserPrincipal principal,
           @PathVariable Long projectId,
           @Valid @RequestBody NotificationCreatedRequestDto request
-            ) {
+    ) {
         ResponseDto<NotificationDetailResponseDto> response = notificationService.createNotification(principal, projectId, request);
 
        return ResponseEntity.ok().body(response);
@@ -37,7 +37,7 @@ public class NotificationController {
     @GetMapping
     public ResponseEntity<ResponseDto<List<NotificationListResponseDto>>> getAllNotifications(
             @PathVariable Long projectId
-            ) {
+    ) {
         ResponseDto<List<NotificationListResponseDto>> response = notificationService.getAllNotifications(projectId);
 
         return ResponseEntity.ok().body(response);
@@ -46,9 +46,10 @@ public class NotificationController {
    // 단건 조회
     @GetMapping(ApiMappingPattern.Notification.BY_ID)
     public ResponseEntity<ResponseDto<NotificationDetailResponseDto>> getNotificationById(
-            @PathVariable Long notificationId
-            ) {
-        ResponseDto<NotificationDetailResponseDto> response = notificationService.getNotificationById(notificationId);
+            @PathVariable Long notificationId,
+            @PathVariable Long projectId
+    ) {
+        ResponseDto<NotificationDetailResponseDto> response = notificationService.getNotificationById(notificationId, projectId);
 
         return ResponseEntity.ok().body(response);
     }
@@ -60,7 +61,7 @@ public class NotificationController {
             @PathVariable Long notificationId,
             @PathVariable Long projectId,
             @Valid @RequestBody NotificationUpdatedRequestDto request
-            ) {
+    ) {
         ResponseDto<NotificationDetailResponseDto> response = notificationService.updateNotification(principal, notificationId, projectId, request);
 
            return ResponseEntity.ok().body(response);

@@ -30,11 +30,11 @@ public class TaskController {
     // 생성
     @PostMapping()
     public ResponseEntity<ResponseDto<TaskCreateResponseDto>> createTask(
-            @PathVariable("projectId") Project project,
+            @PathVariable Long projectId,
             @AuthenticationPrincipal UserPrincipal principal,
             @Valid @RequestBody TaskCreateRequestDto request
             ) {
-        ResponseDto<TaskCreateResponseDto> response = taskService.createTask(project.getId(), principal, request);
+        ResponseDto<TaskCreateResponseDto> response = taskService.createTask(projectId, principal, request);
 
         return ResponseEntity.ok().body(response);
     }

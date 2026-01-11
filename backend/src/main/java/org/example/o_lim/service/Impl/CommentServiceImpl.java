@@ -42,7 +42,7 @@ public class CommentServiceImpl implements CommentService {
                 .orElseThrow(() -> new EntityNotFoundException("해당 ID의 테스크를 찾을 수 없습니다."));
 
         User user = userRepository.findById(principal.getId())
-                .orElseThrow(() -> new IllegalArgumentException("해당 ID의 사용자를 찾을 수 없습니다."));
+                .orElseThrow(() -> new EntityNotFoundException("해당 ID의 사용자를 찾을 수 없습니다."));
 
         Comment comment = Comment.create(task, user, request.content());
         Comment saved = commentRepository.save(comment);
@@ -58,7 +58,7 @@ public class CommentServiceImpl implements CommentService {
         List<CommentRepository.CommentWithCreatedAtProjection> comments = commentRepository.getCommentsByCreatedAtDesc(taskId);
 
         if (comments == null || comments.isEmpty()) {
-            throw new IllegalArgumentException("현재 테스크에 댓글이 없습니다.");
+            throw new EntityNotFoundException("현재 테스크에 댓글이 없습니다.");
         }
 
         List<CommentDetailResponseDto> response = comments.stream()

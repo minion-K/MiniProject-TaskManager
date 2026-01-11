@@ -40,7 +40,7 @@ public class JwtProvider {
                 .build();
     }
 
-    public String generateJwtToken(String userId, Set<String> roles) {
+    public String generateJwtToken(String loginId, Set<String> roles) {
         long now = System.currentTimeMillis();
         Date iat = new Date(now);
         Date exp = new Date(now + jwtExpirationMs);
@@ -48,7 +48,7 @@ public class JwtProvider {
         List<String> roleList = (roles == null) ? List.of() : new ArrayList<>(roles);
 
         return Jwts.builder()
-                .setSubject(userId)
+                .setSubject(loginId)
                 .claim(CLAIM_ROLES, roleList)
                 .setIssuedAt(iat)
                 .setExpiration(exp)
@@ -107,7 +107,7 @@ public class JwtProvider {
        return parseClaimsInternal(tokenWithoutBearer, true);
     }
 
-    public String getUsernameFromJwt(String tokenWithoutBearer) {
+    public String getLoginIdFromJwt(String tokenWithoutBearer) {
         return getClaims(tokenWithoutBearer).getSubject();
     }
 

@@ -3,6 +3,7 @@ package org.example.o_lim.service.Impl;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.apache.coyote.BadRequestException;
 import org.example.o_lim.common.enums.RoleType;
 import org.example.o_lim.common.utils.DateUtils;
 import org.example.o_lim.dto.ResponseDto;
@@ -45,7 +46,7 @@ public class AdminServiceImpl implements AdminService {
         try {
             roleType = RoleType.valueOf(request.role());
         } catch (IllegalArgumentException e) {
-            throw new EntityNotFoundException("요청한 권한 값이 올바르지 않습니다.");
+            throw new IllegalArgumentException("요청한 권한 값이 올바르지 않습니다.");
         }
 
         Role role = roleRepository.findByName(roleType)
@@ -83,7 +84,7 @@ public class AdminServiceImpl implements AdminService {
         try {
             roleType = RoleType.valueOf(request.role());
         } catch (IllegalArgumentException e) {
-            throw new EntityNotFoundException("요청한 권한 값이 올바르지 않습니다.");
+            throw new IllegalArgumentException("요청한 권한 값이 올바르지 않습니다.");
         }
 
         Role role = roleRepository.findById(roleType)

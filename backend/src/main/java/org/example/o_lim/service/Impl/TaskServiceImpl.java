@@ -1,5 +1,6 @@
 package org.example.o_lim.service.Impl;
 
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.example.o_lim.common.enums.PriorityStatus;
 import org.example.o_lim.common.enums.TaskStatus;
@@ -40,7 +41,7 @@ public class TaskServiceImpl implements TaskService {
             Long projectId, UserPrincipal principal, TaskCreateRequestDto request
             ) {
         Project project = projectRepository.findById(projectId)
-                .orElseThrow(() -> new IllegalArgumentException("해당 프로젝트가 존재하지 않습니다."));
+                .orElseThrow(() -> new EntityNotFoundException("해당 프로젝트가 존재하지 않습니다."));
 
         boolean isTask = taskRepository.existsByProjectIdAndTitle(project.getId(), request.title());
 
@@ -49,7 +50,7 @@ public class TaskServiceImpl implements TaskService {
         }
 
         User user = userRepository.findById(principal.getId())
-                .orElseThrow(() -> new IllegalArgumentException("해당 유저가 존재하지 않습니다."));
+                .orElseThrow(() -> new EntityNotFoundException("해당 유저가 존재하지 않습니다."));
 
         Task task = Task.create(
                 project,
@@ -75,7 +76,7 @@ public class TaskServiceImpl implements TaskService {
 
             for (Tag tag : tags) {
                 if (!tag.getProject().getId().equals(project.getId())) {
-                    throw new IllegalArgumentException("해당 프로젝트의 태그가 존재하지 않습니다." + tag.getId());
+                    throw new EntityNotFoundException("해당 프로젝트의 태그가 존재하지 않습니다." + tag.getId());
                 }
 
                 TaskTag taskTag = TaskTag.create(task, tag);
@@ -112,7 +113,7 @@ public class TaskServiceImpl implements TaskService {
         }
 
         Task saveTask = taskRepository.findByIdWithTaskTags(task.getId())
-                .orElseThrow(() -> new IllegalArgumentException("저장된 직무를 찾을 수 없습니다."));
+                .orElseThrow(() -> new EntityNotFoundException("저장된 직무를 찾을 수 없습니다."));
 
         return ResponseDto.setSuccess("SUCCESS", TaskCreateResponseDto.from(saveTask));
 
@@ -132,11 +133,11 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public ResponseDto<TaskDetailResponseDto> getTaskById(Long projectId, Long taskId) {
         Project project = projectRepository.findById(projectId)
-                .orElseThrow(() -> new IllegalArgumentException("해당 프로젝트가 존재하지 않습니다."));
+                .orElseThrow(() -> new EntityNotFoundException("해당 프로젝트가 존재하지 않습니다."));
 
         Task task = taskRepository.findById(taskId)
                 .filter(t -> t.getProject().getId().equals(project.getId()))
-                .orElseThrow(() -> new IllegalArgumentException("해당 프로젝트 내에 존재하지 않는 직무입니다."));
+                .orElseThrow(() -> new EntityNotFoundException("해당 프로젝트 내에 존재하지 않는 직무입니다."));
 
         return ResponseDto.setSuccess("SUCCESS", TaskDetailResponseDto.from(task));
     }
@@ -147,7 +148,7 @@ public class TaskServiceImpl implements TaskService {
             LocalDate dueDate
             ) {
         Project project = projectRepository.findById(projectId)
-                .orElseThrow(() -> new IllegalArgumentException("해당 프로젝트가 존재하지 않습니다."));
+                .orElseThrow(() -> new EntityNotFoundException("해당 프로젝트가 존재하지 않습니다."));
 
         List<Task> tasks = taskRepository.searchTasks(projectId, createUserId, status, priority, dueDate);
 
@@ -165,10 +166,10 @@ public class TaskServiceImpl implements TaskService {
             Long projectId, Long taskId, UserPrincipal principal, TaskUpdateRequestDto request
             ) {
         Project project = projectRepository.findById(projectId)
-                .orElseThrow(() -> new IllegalArgumentException("해당 프로젝트가 존재하지 않습니다."));
+                .orElseThrow(() -> new EntityNotFoundException("해당 프로젝트가 존재하지 않습니다."));
 
         Task task = taskRepository.findByIdAndProjectId(taskId, projectId)
-                .orElseThrow(() -> new IllegalArgumentException("해당 직무가 존재하지 않습니다."));
+                .orElseThrow(() -> new EntityNotFoundException("해당 직무가 존재하지 않습니다."));
 
         if (request.title() == null
                 && request.content() == null
@@ -278,7 +279,7 @@ public class TaskServiceImpl implements TaskService {
         // 유효성: 프로젝트에 속한 태그인지 확인
         for (Long tagId : toAdd) {
             boolean exists = tagRepository.existsByIdAndProjectId(tagId, project.getId());
-            if (!exists) throw new IllegalArgumentException("프로젝트에 속하지 않는 태그(ID=" + tagId + ") 입니다.");
+            if (!exists) throw new EntityNotFoundException("프로젝트에 속하지 않는 태그(ID=" + tagId + ") 입니다.");
         }
         for (Long tagId : toRemove) {
             // 삭제 대상이 현재 달려있지 않다면 그냥 무시(혹은 에러 처리도 가능)
@@ -316,7 +317,7 @@ public class TaskServiceImpl implements TaskService {
                             .collect(Collectors.toList());
 
                 if(!notFoundIds.isEmpty()) {
-                    throw new IllegalArgumentException("존재하지 않는 유저가 포함되어 있습니다. ID: " +notFoundIds);
+                    throw new EntityNotFoundException("존재하지 않는 유저가 포함되어 있습니다. ID: " +notFoundIds);
                 }
 
                 Set<Long> currentAssigneeIds = task.getAssignee().stream()
@@ -329,8 +330,7 @@ public class TaskServiceImpl implements TaskService {
                         .collect(Collectors.toList());
 
                     if (!notAssignedIds.isEmpty()) {
-                        throw new IllegalArgumentException("해당 작업에 할당되지 않은 담당자(ID= " + notAssignedIds + ")가 포함되어 있습니다.");
-
+                        throw new EntityNotFoundException("해당 작업에 할당되지 않은 담당자(ID= " + notAssignedIds + ")가 포함되어 있습니다.");
                     }
 
                 usersToRemove.forEach(task::removeAssignee);
@@ -347,7 +347,7 @@ public class TaskServiceImpl implements TaskService {
                    List<Long> notFoundIds = addAssignees.stream()
                            .filter(id -> !foundIds.contains(id))
                            .collect(Collectors.toList());
-                   throw new IllegalArgumentException("존재하지 않는 유저가 포함되어 있습니다. ID: " + notFoundIds);
+                   throw new EntityNotFoundException("존재하지 않는 유저가 포함되어 있습니다. ID: " + notFoundIds);
                }
                usersToAdd.forEach(task::addAssignee);
             }
@@ -361,7 +361,7 @@ public class TaskServiceImpl implements TaskService {
             for (Long tagId : toAdd) {
                 if (!existingTagIds.contains(tagId)) {
                     Tag tag = tagRepository.findById(tagId)
-                            .orElseThrow(() -> new IllegalArgumentException("태그(ID=" + tagId + ")를 찾을 수 없습니다."));
+                            .orElseThrow(() -> new EntityNotFoundException("태그(ID=" + tagId + ")를 찾을 수 없습니다."));
                     task.addTag(tag); // <-- Task 엔티티에 addTag(Tag) 유틸 메서드가 있다고 가정
                     existingTagIds.add(tagId);
                 }
@@ -386,10 +386,10 @@ public class TaskServiceImpl implements TaskService {
             Long projectId, Long taskId, UserPrincipal principal, TaskUpdateStatusRequestDto request
             ) {
         Project project = projectRepository.findById(projectId)
-                .orElseThrow(() -> new IllegalArgumentException("해당 프로젝트가 존재하지 않습니다."));
+                .orElseThrow(() -> new EntityNotFoundException("해당 프로젝트가 존재하지 않습니다."));
 
         Task task = taskRepository.findByIdWithAssignees(taskId)
-                .orElseThrow(() -> new IllegalArgumentException("해당 직무가 존재하지 않습니다."));
+                .orElseThrow(() -> new EntityNotFoundException("해당 직무가 존재하지 않습니다."));
 
         task.updateStatus(request.status());
 
@@ -401,10 +401,10 @@ public class TaskServiceImpl implements TaskService {
     @PreAuthorize("hasAnyRole('MANAGER', 'ADMIN')")
     public ResponseDto<Void> deleteTask(Long projectId, Long taskId, UserPrincipal principal) {
         Project project = projectRepository.findById(projectId)
-                .orElseThrow(() -> new IllegalArgumentException("해당 프로젝트가 존재하지 않습니다."));
+                .orElseThrow(() -> new EntityNotFoundException("해당 프로젝트가 존재하지 않습니다."));
 
         Task task = taskRepository.findByIdAndProjectId(taskId, projectId)
-                .orElseThrow(() -> new IllegalArgumentException("해당 직무가 존재하지 않습니다."));
+                .orElseThrow(() -> new EntityNotFoundException("해당 직무가 존재하지 않습니다."));
 
         taskRepository.delete(task);
 
