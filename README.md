@@ -61,3 +61,38 @@
 - Task 상태/담당자/마강일 변경 시 이력 기록
 - Tag M:N 매핑(task_tag 조인 테이블)
 - 댓글 기반 협업 모델
+
+## 📡 API 예시
+
+※ 모든 API는 JWT 기반 인증을 사용하며, Authorization 헤더에 Bearer Token을 포함해야 합니다.
+
+---
+
+## 🔐 인증 (Auth)
+
+### 로그인
+
+POST /api/auth/sign-in
+
+#### Request
+```json
+{
+  "loginId": "testuser",
+  "password": "password123"
+}
+```
+
+#### Response
+```
+{
+  "success": true,
+  "data": {
+    "tokenType": "Bearer",
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6...",
+    "expiresAt": 1710000000000,
+    "username": "testuser",
+    "roles": ["USER"]
+  }
+}
+```
+
