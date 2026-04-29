@@ -58,7 +58,7 @@
 ## 👉 기술적 설계 포인트(요약)
 - REST 기반 API
 - JWT 기반 인증/인가
-- Task 상태/담당자/마강일 변경 시 이력 기록
+- Task 상태/담당자/마감일 변경 시 이력 기록
 - Tag M:N 매핑(task_tag 조인 테이블)
 - 댓글 기반 협업 모델
 
@@ -94,6 +94,7 @@
 ## 🔐 인증 (Auth)
 
 ### 로그인
+사용자 인증을 통해 JWT 토큰을 발급받는 API
 
 POST /api/v1/auth/sign-in
 
@@ -119,9 +120,10 @@ POST /api/v1/auth/sign-in
 }
 ```
 
-## Task
+## 📌 Task
 
 ### Task 생성
+프로젝트 내 새로운 작업(Task)을 생성하는 API
 
 POST /api/v1/projects/{projectId}/tasks  
 Authorization: Bearer {accessToken}
@@ -163,6 +165,8 @@ Authorization: Bearer {accessToken}
 ```
 
 ### Task 상태변경
+작업 상태를 변경하는 API (TODO → IN_PROGRESS → DONE)
+
 PUT /api/v1/projects/{projectId}/tasks/{taskId}/status  
 Authorization: Bearer {accessToken}
 
