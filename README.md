@@ -72,7 +72,7 @@
 
 ### 로그인
 
-POST /api/auth/sign-in
+POST /api/v1/auth/sign-in
 
 #### Request
 ```json
@@ -100,7 +100,7 @@ POST /api/auth/sign-in
 
 ### Task 생성
 
-POST /api/projects/{projectId}/tasks  
+POST /api/v1/projects/{projectId}/tasks  
 Authorization: Bearer {accessToken}
 
 #### Request
@@ -140,7 +140,7 @@ Authorization: Bearer {accessToken}
 ```
 
 ### Task 상태변경
-PUT /api/projects/{projectId}/tasks/{taskId}/status  
+PUT /api/v1/projects/{projectId}/tasks/{taskId}/status  
 Authorization: Bearer {accessToken}
 
 #### Request
