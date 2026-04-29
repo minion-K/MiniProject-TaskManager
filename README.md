@@ -62,6 +62,29 @@
 - Tag M:N 매핑(task_tag 조인 테이블)
 - 댓글 기반 협업 모델
 
+## 🔐 인증 흐름
+
+- 로그인 성공 시 JWT Access Token 발급  
+- 이후 모든 API 요청 시 Authorization 헤더에 Bearer Token 포함  
+- 서버는 토큰을 검증하여 사용자 인증 처리  
+
+---
+
+## 📊 상태 정의
+
+### TaskStatus
+- TODO: 작업 대기 상태  
+- IN_PROGRESS: 작업 진행 중  
+- DONE: 작업 완료  
+
+### PriorityStatus
+- LOW: 낮음  
+- MEDIUM: 보통  
+- HIGH: 높음  
+
+---
+
+
 ## 📡 API 예시
 
 ※ 모든 API는 JWT 기반 인증을 사용하며, Authorization 헤더에 Bearer Token을 포함해야 합니다.
@@ -172,3 +195,14 @@ Authorization: Bearer {accessToken}
 }
 ```
 
+## 🔄 서비스 흐름
+
+회원가입 → 로그인 → 프로젝트 생성 → Task 생성 → 상태 변경 → 댓글 작성
+
+---
+
+## 🧩 구조
+
+- Controller → Service → Repository 계층 구조  
+- DTO 기반 요청/응답 처리  
+- Spring Security + JWT 인증 구조  
