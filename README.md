@@ -83,7 +83,7 @@ POST /api/auth/sign-in
 ```
 
 #### Response
-```
+```json
 {
   "success": true,
   "data": {
@@ -92,6 +92,82 @@ POST /api/auth/sign-in
     "expiresAt": 1710000000000,
     "username": "testuser",
     "roles": ["USER"]
+  }
+}
+```
+
+## Task
+
+### Task 생성
+
+POST /api/projects/{projectId}/tasks
+Authorization: Bearer {accessToken}
+
+#### Request
+```json
+{
+  "title": "할 일 제목",
+  "content": "할 일 내용입니다.",
+  "assigneeIds": [1, 2],
+  "tagIds": [1],
+  "newTags": [
+    { "name": "긴급" }
+  ],
+  "status": "TODO",
+  "priority": "HIGH",
+  "dueDate": "2026-05-01"
+}
+```
+
+#### Response
+```json
+{
+  "success": true,
+  "data": {
+    "projectId": 1,
+    "title": "할 일 제목",
+    "createUserId": 1,
+    "content": "할 일 내용입니다.",
+    "assignees": ["user1", "user2"],
+    "tags": [
+      { "id": 1, "name": "긴급" }
+    ],
+    "status": "TODO",
+    "priority": "HIGH",
+    "dueDate": "2026-05-01"
+  }
+}
+```
+
+### Task 상태변경
+PUT /api/projects/{projectId}/tasks/{taskId}/status
+Authorization: Bearer {accessToken}
+
+#### Request
+```json
+{
+  "status": "IN_PROGRESS"
+}
+```
+
+#### Response
+```json
+{
+  "success": true,
+  "data": {
+    "id": 1,
+    "projectId": 1,
+    "title": "할 일 제목",
+    "content": "할 일 내용입니다.",
+    "createUserId": 1,
+    "assignees": ["user1"],
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "tags": [
+      { "id": 1, "name": "긴급" }
+    ],
+    "dueDate": "2026-05-01",
+    "comments": []
   }
 }
 ```
